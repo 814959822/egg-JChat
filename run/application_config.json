@@ -1,0 +1,782 @@
+{
+  "config": {
+    "session": {
+      "maxAge": 86400000,
+      "key": "EGG_SESS",
+      "httpOnly": true,
+      "encrypt": true,
+      "logValue": true,
+      "overwrite": true,
+      "signed": true,
+      "autoCommit": true,
+      "encode": "<Function encode>",
+      "decode": "<Function decode>",
+      "genid": "<Function v4>"
+    },
+    "security": {
+      "domainWhiteList": [
+        "http://localhost:8080"
+      ],
+      "protocolWhiteList": [],
+      "defaultMiddleware": "csrf,hsts,methodnoallow,noopen,nosniff,csp,xssProtection,xframe,dta",
+      "csrf": {
+        "enable": false,
+        "type": "ctoken",
+        "ignoreJSON": false,
+        "useSession": false,
+        "cookieName": "csrfToken",
+        "sessionName": "csrfToken",
+        "headerName": "x-csrf-token",
+        "bodyName": "_csrf",
+        "queryName": "_csrf",
+        "supportedRequests": [
+          {
+            "path": {},
+            "methods": [
+              "POST",
+              "PATCH",
+              "DELETE",
+              "PUT",
+              "CONNECT"
+            ]
+          }
+        ],
+        "refererWhiteList": []
+      },
+      "xframe": {
+        "enable": true,
+        "value": "SAMEORIGIN",
+        "matching": "<Function anonymous>"
+      },
+      "hsts": {
+        "enable": false,
+        "maxAge": 31536000,
+        "includeSubdomains": false
+      },
+      "dta": {
+        "enable": true,
+        "matching": "<Function anonymous>"
+      },
+      "methodnoallow": {
+        "enable": true,
+        "matching": "<Function anonymous>"
+      },
+      "noopen": {
+        "enable": true,
+        "matching": "<Function anonymous>"
+      },
+      "nosniff": {
+        "enable": true,
+        "matching": "<Function anonymous>"
+      },
+      "referrerPolicy": {
+        "enable": false,
+        "value": "no-referrer-when-downgrade"
+      },
+      "xssProtection": {
+        "enable": true,
+        "value": "1; mode=block",
+        "matching": "<Function anonymous>"
+      },
+      "csp": {
+        "enable": false,
+        "policy": {}
+      },
+      "ssrf": {
+        "ipBlackList": null,
+        "ipExceptionList": null,
+        "checkAddress": null
+      },
+      "_protocolWhiteListSet": "<Set>"
+    },
+    "helper": {
+      "shtml": {}
+    },
+    "jsonp": {
+      "limit": 50,
+      "callback": [
+        "_callback",
+        "callback"
+      ],
+      "csrf": false
+    },
+    "onerror": {
+      "errorPageUrl": "",
+      "appErrorFilter": null,
+      "templatePath": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-onerror/lib/onerror_page.mustache"
+    },
+    "i18n": {
+      "defaultLocale": "en_US",
+      "dirs": [
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-session/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-security/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-jsonp/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-onerror/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-i18n/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-watcher/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-schedule/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-multipart/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-logrotator/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-static/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-view/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-cors/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-sequelize/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-view-ejs/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-valparams/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-jwt/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-redis/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-websocket-plugin/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-oss/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/locales",
+        "/Users/jhq/WeChatProjects/egg-wechat/config/locales"
+      ],
+      "queryField": "locale",
+      "cookieField": "locale",
+      "cookieDomain": "",
+      "cookieMaxAge": "1y",
+      "functionName": "__"
+    },
+    "watcher": {
+      "type": "default",
+      "eventSources": {
+        "default": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-watcher/lib/event-sources/default",
+        "development": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-watcher/lib/event-sources/development"
+      }
+    },
+    "customLogger": {
+      "scheduleLogger": {
+        "consoleLevel": "NONE",
+        "file": "egg-schedule.log"
+      }
+    },
+    "schedule": {
+      "directory": []
+    },
+    "multipart": {
+      "mode": "file",
+      "autoFields": false,
+      "defaultCharset": "utf8",
+      "fieldNameSize": 100,
+      "fieldSize": 102400,
+      "fields": 10,
+      "fileSize": 10485760,
+      "files": 10,
+      "fileExtensions": [],
+      "whitelist": null,
+      "allowArrayField": false,
+      "tmpdir": "/var/folders/cz/ph4h37x15kv784hlh9xw7hp80000gn/T/egg-multipart-tmp/wechat",
+      "cleanSchedule": {
+        "cron": "0 30 4 * * *",
+        "disable": false
+      }
+    },
+    "logrotator": {
+      "filesRotateByHour": null,
+      "hourDelimiter": "-",
+      "filesRotateBySize": null,
+      "maxFileSize": 52428800,
+      "maxFiles": 10,
+      "rotateDuration": 60000,
+      "maxDays": 31
+    },
+    "static": {
+      "prefix": "/public/",
+      "dir": "/Users/jhq/WeChatProjects/egg-wechat/app/public",
+      "dynamic": true,
+      "preload": false,
+      "buffer": true,
+      "maxFiles": 1000,
+      "maxAge": 31536000
+    },
+    "view": {
+      "root": [],
+      "cache": true,
+      "defaultExtension": ".html",
+      "defaultViewEngine": "",
+      "mapping": {
+        ".html": "ejs"
+      }
+    },
+    "cors": {
+      "origin": "*",
+      "allowMethods": "GET, PUT, POST, DELETE, PATCH"
+    },
+    "sequelize": {
+      "dialect": "mysql",
+      "database": "egg-wechat",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "username": "root",
+      "password": "<String len: 13>",
+      "timezone": "+08:00",
+      "define": {
+        "freezeTableName": true,
+        "timestamps": true,
+        "createdAt": "created_at",
+        "updatedAt": "updated_at",
+        "underscored": true
+      }
+    },
+    "ejs": {
+      "root": "/Users/jhq/WeChatProjects/egg-wechat/app/view",
+      "cache": true,
+      "debug": false,
+      "compileDebug": true,
+      "delimiter": null,
+      "strict": false
+    },
+    "valparams": {
+      "cover": true,
+      "allowMultiCall": true,
+      "throwError": true,
+      "allowEmptyStr": false,
+      "locale": "zh-cn"
+    },
+    "jwt": {
+      "secret": "<String len: 34>",
+      "enable": false
+    },
+    "redis": {
+      "default": {},
+      "app": true,
+      "agent": false,
+      "supportTimeCommand": true,
+      "client": {
+        "port": 6379,
+        "host": "127.0.0.1",
+        "password": "<String len: 0>",
+        "db": 0
+      }
+    },
+    "websocket": {
+      "useAppMiddlewares": true
+    },
+    "oss": {
+      "default": {
+        "timeout": "60s"
+      },
+      "useAgent": false,
+      "client": {
+        "accessKeyId": "LTAI5tCJZc1e3RJWBLPR6WKU",
+        "accessKeySecret": "<String len: 30>",
+        "bucket": "wechatjhq",
+        "endpoint": "oss-cn-beijing.aliyuncs.com",
+        "timeout": "60s"
+      }
+    },
+    "env": "prod",
+    "name": "wechat",
+    "keys": "<String len: 25>",
+    "cookies": {},
+    "proxy": false,
+    "maxIpsCount": 0,
+    "maxProxyCount": 0,
+    "protocolHeaders": "x-forwarded-proto",
+    "ipHeaders": "x-forwarded-for",
+    "hostHeaders": "",
+    "pkg": {
+      "name": "wechat",
+      "version": "1.0.0",
+      "description": "",
+      "private": true,
+      "egg": {
+        "declarations": true
+      },
+      "dependencies": {
+        "crypto": "^1.0.1",
+        "egg": "^2.15.1",
+        "egg-cors": "^2.2.3",
+        "egg-jwt": "^3.1.7",
+        "egg-oss": "^2.0.0",
+        "egg-redis": "^2.4.0",
+        "egg-scripts": "^2.11.0",
+        "egg-sequelize": "^6.0.0",
+        "egg-valparams": "^1.4.5",
+        "egg-view-ejs": "^2.0.1",
+        "egg-websocket-plugin": "^1.0.1",
+        "mysql2": "^2.3.3",
+        "qr-image": "^3.2.0",
+        "sort-word": "^1.0.7",
+        "websocket": "^1.0.34"
+      },
+      "devDependencies": {
+        "autod": "^3.0.1",
+        "autod-egg": "^1.1.0",
+        "egg-bin": "^4.11.0",
+        "egg-ci": "^1.11.0",
+        "egg-mock": "^3.21.0",
+        "eslint": "^5.13.0",
+        "eslint-config-egg": "^7.1.0",
+        "sequelize-cli": "^6.4.1"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "scripts": {
+        "start": "egg-scripts start --daemon --title=egg-server-wechat",
+        "stop": "egg-scripts stop --title=egg-server-wechat",
+        "dev": "egg-bin dev",
+        "debug": "egg-bin debug",
+        "test": "npm run lint -- --fix && npm run test-local",
+        "test-local": "egg-bin test",
+        "cov": "egg-bin cov",
+        "lint": "eslint .",
+        "ci": "npm run lint && npm run cov",
+        "autod": "autod"
+      },
+      "ci": {
+        "version": "10"
+      },
+      "repository": {
+        "type": "git",
+        "url": ""
+      },
+      "author": "",
+      "license": "MIT"
+    },
+    "baseDir": "/Users/jhq/WeChatProjects/egg-wechat",
+    "HOME": "/Users/jhq",
+    "rundir": "/Users/jhq/WeChatProjects/egg-wechat/run",
+    "dump": {
+      "ignore": "<Set>"
+    },
+    "confusedConfigurations": {
+      "bodyparser": "bodyParser",
+      "notFound": "notfound",
+      "sitefile": "siteFile",
+      "middlewares": "middleware",
+      "httpClient": "httpclient"
+    },
+    "notfound": {
+      "pageUrl": ""
+    },
+    "siteFile": {
+      "/favicon.ico": "<Buffer len: 6463>",
+      "cacheControl": "public, max-age=2592000"
+    },
+    "bodyParser": {
+      "enable": true,
+      "encoding": "utf8",
+      "formLimit": "1mb",
+      "jsonLimit": "1mb",
+      "textLimit": "1mb",
+      "strict": true,
+      "queryString": {
+        "arrayLimit": 100,
+        "depth": 5,
+        "parameterLimit": 1000
+      },
+      "returnRawBody": true
+    },
+    "logger": {
+      "dir": "/Users/jhq/logs/wechat",
+      "encoding": "utf8",
+      "env": "prod",
+      "level": "INFO",
+      "consoleLevel": "INFO",
+      "disableConsoleAfterReady": true,
+      "outputJSON": false,
+      "buffer": true,
+      "appLogName": "wechat-web.log",
+      "coreLogName": "egg-web.log",
+      "agentLogName": "egg-agent.log",
+      "errorLogName": "common-error.log",
+      "coreLogger": {},
+      "allowDebugAtProd": false,
+      "enablePerformanceTimer": false,
+      "type": "application"
+    },
+    "httpclient": {
+      "enableDNSCache": false,
+      "dnsCacheLookupInterval": 10000,
+      "dnsCacheMaxLength": 1000,
+      "request": {
+        "timeout": 5000
+      },
+      "httpAgent": {
+        "keepAlive": true,
+        "freeSocketTimeout": 4000,
+        "maxSockets": 9007199254740991,
+        "maxFreeSockets": 256,
+        "timeout": 8000,
+        "socketActiveTTL": 0
+      },
+      "httpsAgent": {
+        "keepAlive": true,
+        "freeSocketTimeout": 4000,
+        "maxSockets": 9007199254740991,
+        "maxFreeSockets": 256,
+        "timeout": 8000,
+        "socketActiveTTL": 0
+      }
+    },
+    "meta": {
+      "enable": true,
+      "logging": false
+    },
+    "coreMiddleware": [
+      "cors",
+      "meta",
+      "siteFile",
+      "notfound",
+      "static",
+      "bodyParser",
+      "overrideMethod",
+      "session",
+      "securities",
+      "i18n",
+      "multipart"
+    ],
+    "workerStartTimeout": 600000,
+    "serverTimeout": null,
+    "cluster": {
+      "listen": {
+        "path": "",
+        "port": 7001,
+        "hostname": ""
+      }
+    },
+    "clusterClient": {
+      "maxWaitTime": 60000,
+      "responseTimeout": 60000
+    },
+    "onClientError": null,
+    "middleware": [
+      "jwt",
+      "errorHandler",
+      "auth"
+    ],
+    "auth": {
+      "ignore": [
+        "/reg",
+        "/login",
+        "/ws"
+      ]
+    },
+    "crypto": {
+      "secret": "<String len: 34>"
+    },
+    "coreMiddlewares": "~config~coreMiddleware",
+    "appMiddlewares": "~config~middleware",
+    "appMiddleware": "~config~middleware",
+    "multipartParseOptions": {
+      "autoFields": false,
+      "defCharset": "utf8",
+      "limits": {
+        "fieldNameSize": 100,
+        "fieldSize": 102400,
+        "fields": 10,
+        "fileSize": 10485760,
+        "files": 10
+      },
+      "checkFile": "<Function checkFile>"
+    }
+  },
+  "plugins": {
+    "onerror": {
+      "enable": true,
+      "package": "egg-onerror",
+      "name": "onerror",
+      "dependencies": [],
+      "optionalDependencies": [
+        "jsonp"
+      ],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-onerror",
+      "version": "2.1.0"
+    },
+    "session": {
+      "enable": true,
+      "package": "egg-session",
+      "name": "session",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-session",
+      "version": "3.3.0"
+    },
+    "i18n": {
+      "enable": true,
+      "package": "egg-i18n",
+      "name": "i18n",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-i18n",
+      "version": "2.1.1"
+    },
+    "watcher": {
+      "enable": true,
+      "package": "egg-watcher",
+      "name": "watcher",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-watcher",
+      "version": "3.1.1"
+    },
+    "multipart": {
+      "enable": true,
+      "package": "egg-multipart",
+      "name": "multipart",
+      "dependencies": [],
+      "optionalDependencies": [
+        "schedule"
+      ],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-multipart",
+      "version": "2.13.1"
+    },
+    "security": {
+      "enable": true,
+      "package": "egg-security",
+      "name": "security",
+      "dependencies": [],
+      "optionalDependencies": [
+        "session"
+      ],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-security",
+      "version": "2.10.1"
+    },
+    "development": {
+      "enable": false,
+      "package": "egg-development",
+      "name": "development",
+      "dependencies": [
+        "watcher"
+      ],
+      "optionalDependencies": [],
+      "env": [
+        "local"
+      ],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-development",
+      "version": "2.7.0"
+    },
+    "logrotator": {
+      "enable": true,
+      "package": "egg-logrotator",
+      "name": "logrotator",
+      "dependencies": [
+        "schedule"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-logrotator",
+      "version": "3.1.0"
+    },
+    "schedule": {
+      "enable": true,
+      "package": "egg-schedule",
+      "name": "schedule",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-schedule",
+      "version": "3.6.6"
+    },
+    "static": {
+      "enable": true,
+      "package": "egg-static",
+      "name": "static",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-static",
+      "version": "2.2.0"
+    },
+    "jsonp": {
+      "enable": true,
+      "package": "egg-jsonp",
+      "name": "jsonp",
+      "dependencies": [],
+      "optionalDependencies": [
+        "security"
+      ],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-jsonp",
+      "version": "2.0.0"
+    },
+    "view": {
+      "enable": true,
+      "package": "egg-view",
+      "name": "view",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-view",
+      "version": "2.1.3"
+    },
+    "cors": {
+      "enable": true,
+      "package": "egg-cors",
+      "name": "cors",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-cors",
+      "version": "2.2.3"
+    },
+    "sequelize": {
+      "enable": true,
+      "package": "egg-sequelize",
+      "name": "sequelize",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-sequelize",
+      "version": "6.0.0"
+    },
+    "ejs": {
+      "enable": true,
+      "package": "egg-view-ejs",
+      "name": "ejs",
+      "dependencies": [
+        "view"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-view-ejs",
+      "version": "2.0.1"
+    },
+    "valparams": {
+      "enable": true,
+      "package": "egg-valparams",
+      "name": "valparams",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-valparams",
+      "version": "1.4.5"
+    },
+    "jwt": {
+      "enable": true,
+      "package": "egg-jwt",
+      "name": "jwt",
+      "dependencies": [],
+      "optionalDependencies": [
+        "onerror"
+      ],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-jwt",
+      "version": "3.1.7"
+    },
+    "redis": {
+      "enable": true,
+      "package": "egg-redis",
+      "name": "redis",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-redis",
+      "version": "2.4.0"
+    },
+    "websocket": {
+      "enable": true,
+      "package": "egg-websocket-plugin",
+      "name": "websocket",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-websocket-plugin",
+      "version": "1.0.1"
+    },
+    "oss": {
+      "enable": true,
+      "package": "egg-oss",
+      "name": "oss",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/jhq/WeChatProjects/egg-wechat/config/plugin.js",
+      "path": "/Users/jhq/WeChatProjects/egg-wechat/node_modules/egg-oss",
+      "version": "2.0.0"
+    }
+  },
+  "appInfo": {
+    "name": "wechat",
+    "baseDir": "/Users/jhq/WeChatProjects/egg-wechat",
+    "env": "prod",
+    "HOME": "/Users/jhq",
+    "pkg": {
+      "name": "wechat",
+      "version": "1.0.0",
+      "description": "",
+      "private": true,
+      "egg": {
+        "declarations": true
+      },
+      "dependencies": {
+        "crypto": "^1.0.1",
+        "egg": "^2.15.1",
+        "egg-cors": "^2.2.3",
+        "egg-jwt": "^3.1.7",
+        "egg-oss": "^2.0.0",
+        "egg-redis": "^2.4.0",
+        "egg-scripts": "^2.11.0",
+        "egg-sequelize": "^6.0.0",
+        "egg-valparams": "^1.4.5",
+        "egg-view-ejs": "^2.0.1",
+        "egg-websocket-plugin": "^1.0.1",
+        "mysql2": "^2.3.3",
+        "qr-image": "^3.2.0",
+        "sort-word": "^1.0.7",
+        "websocket": "^1.0.34"
+      },
+      "devDependencies": {
+        "autod": "^3.0.1",
+        "autod-egg": "^1.1.0",
+        "egg-bin": "^4.11.0",
+        "egg-ci": "^1.11.0",
+        "egg-mock": "^3.21.0",
+        "eslint": "^5.13.0",
+        "eslint-config-egg": "^7.1.0",
+        "sequelize-cli": "^6.4.1"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "scripts": {
+        "start": "egg-scripts start --daemon --title=egg-server-wechat",
+        "stop": "egg-scripts stop --title=egg-server-wechat",
+        "dev": "egg-bin dev",
+        "debug": "egg-bin debug",
+        "test": "npm run lint -- --fix && npm run test-local",
+        "test-local": "egg-bin test",
+        "cov": "egg-bin cov",
+        "lint": "eslint .",
+        "ci": "npm run lint && npm run cov",
+        "autod": "autod"
+      },
+      "ci": {
+        "version": "10"
+      },
+      "repository": {
+        "type": "git",
+        "url": ""
+      },
+      "author": "",
+      "license": "MIT"
+    },
+    "root": "/Users/jhq"
+  }
+}
