@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "jiahuiqian123",
+    "database": "egg-wechat",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "jiahuiqian123",
+    "database": "egg-wechat",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "jiahuiqian123",
+    "database": "egg-wechat",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
